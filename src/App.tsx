@@ -189,8 +189,9 @@ const App: React.FC = () => {
                </div>
             </div>
             <div className="px-4 mt-4">
-          
+           
             </div>
+            
             <div className="px-4 mt-4 flex justify-center">
               <div className="px-4 py-2 flex items-center space-x-2">
                 <img src={dollarCoin} alt="Dollar Coin" className="w-10 h-10" />
@@ -206,27 +207,30 @@ const App: React.FC = () => {
                 </div>
               </div>
             </div> 
-            <div className="flex justify-between">
-            <button onClick={toggleMinePage}>
-               <img src={Arrow} alt="Boost" className="mx-auto w-12 h-12" />
+            <div className="flex justify-between space">
+            <button onClick={toggleMinePage} className="ml-4">
+        <img src={Arrow} alt="Boost" className="mx-auto w-12 h-12" />
+        <p className="text-[10px] text-center text-[#85827d] mt-1">Mine</p>
+        {isMinePageOpen}
+    </button>
+      
+        {isMinePageOpen && (<MinePage toggleMinePage={toggleMinePage} points={points} // ارسال موجودی سکه‌ها به MinePage
+        />
+        )}
+         {/* نوار پیشرفت */}
+         <div className="progress-bar-container ml-4">
+              <div className="progress-bar relative items-center flex justify-center" 
+              style={{ width: `${(clicksCount / clickLimit) * 100}%` }}>
+              <p>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}</p></div>
+            </div>
+             <button onClick={toggleBoostPage} className="mx-4">
+               <img src={Boost} alt="Boost" className="mx-auto w-12 h-12" />
                <p className="text-[10px] text-center text-[#85827d] mt-1">Mine</p>
                {isMinePageOpen}
             </button>
-      
-      {isMinePageOpen && (<MinePage toggleMinePage={toggleMinePage} points={points} // ارسال موجودی سکه‌ها به MinePage
-      />
-      )}
-             <p className="text-sm text-center">{(timeRemaining)}</p>
-             <a
-          href="#"
-          onClick={toggleBoostPage}
-          className="rounded-lg px-2 py-2 relative justify-end items-start"
-        >
-          <img src={Boost} alt="Boost" className="mx-auto w-12 h-12" />
-          <p className="text-[10px] text-center text-[#85827d] mt-1">Boost</p>
-        </a>
+            
         {/* نمایش صفحه Boost */}
-      {isBoostPageVisible && <BoostPage toggleBoostPage={toggleBoostPage} />}
+        {isBoostPageVisible && <BoostPage toggleBoostPage={toggleBoostPage} />}
            </div>
           </div>
         </div>
@@ -240,7 +244,7 @@ const App: React.FC = () => {
           <p className="mt-1">Exchange</p>
         </div>
         <div className="text-center text-[#85827d] w-1/5">
-          <button className="rounded-lg px-2 py-2 w-full  relative items-center" onClick={handleOpenDailyReward}>
+          <button className="rounded-lg px-2 py-2 w-full relative items-center" onClick={handleOpenDailyReward}>
             <img src={dailyReward} alt="Daily Reward" className="w-8 h-8 mx-auto" />
             <p className="text-[10px] text-center text-[#85827d] mt-1">Reward</p>
           </button>
