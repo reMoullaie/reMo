@@ -125,7 +125,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* برجسته کردن تصویر */
 }
 .progress-bar-container {
-  width: 100%;
+  width: 90%;
   height: 15px;
   background-color: #272a2f;
   border-radius: 10px;
