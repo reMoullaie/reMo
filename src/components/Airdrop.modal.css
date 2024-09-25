@@ -1,0 +1,88 @@
+.roadmap-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: auto; /* Allow scrolling */
+  overflow: hidden; /* Ensure no scrollbars appear on the backdrop */
+  touch-action: none; /* Disable default touch actions on backdrop */
+}
+
+.roadmap-modal-content {
+  background: #fff;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 550px;
+  max-height: 95vh; /* Ensure modal is not too tall on small screens */
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-y: auto; /* Allow vertical scrolling */
+  text-align: left; /* Align text to the left */
+  touch-action: auto; /* Allow scrolling */
+}
+
+.roadmap-title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.roadmap-step {
+  margin-bottom: 20px;
+}
+
+.roadmap-step h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.roadmap-step p {
+  margin: 0;
+}
+
+.roadmap-step ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.modal-footer {
+  text-align: right; /* Align Close button to the right */
+}
+
+.close-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.close-btn:hover {
+  background: #0056b3;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  .roadmap-title {
+    font-size: 1.2em;
+  }
+
+  .roadmap-step h3 {
+    font-size: 1em;
+  }
+
+  .roadmap-step p {
+    font-size: 0.9em;
+  }
+
+  .close-btn {
+    font-size: 0.9em;
+  }
+}

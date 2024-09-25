@@ -1,0 +1,83 @@
+/* Modal.css */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* پس زمینه تیره */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto; /* قابلیت اسکرول */
+  z-index: 9999; /* مطمئن شوید که مودال در بالاترین لایه قرار دارد */
+  touch-action: auto; /* فعال کردن تاچ */
+}
+.modal {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-content {
+  background-color: #1d2025;
+  width: 100%;
+  max-width: 600px; /* عرض حداکثری */
+  margin: 20px; /* فاصله مودال از کناره‌های صفحه */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* اسکرول محتوای داخلی مودال در صورت نیاز */
+  max-height: 90vh; /* حداکثر ارتفاع برای جلوگیری از پر کردن کل صفحه */
+}
+
+.close-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.close-btn:hover {
+  background-color: #ff3333;
+}
+
+.reward-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #272a2f;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.reward-box .reward-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.reward-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.reward-link.disabled {
+  pointer-events: none;
+  opacity: 0.6; /* غیرفعال کردن لینک */
+}
+
+.timer-text {
+  font-size: 12px;
+  color: #ffcc00;
+}

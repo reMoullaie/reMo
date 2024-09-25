@@ -1,0 +1,98 @@
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8); /* پس‌زمینه تار */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  
+  .modal-content {
+    background: #1d2025; /* پس‌زمینه مودال */
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px; /* حداکثر عرض مودال */
+    color: white;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* سایه برای مودال */
+  }
+  
+  .modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .modal-links {
+    margin: 20px 0;
+  }
+  
+  .reward-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    background: #272a2f; /* پس‌زمینه برای باکس‌های جایزه */
+    transition: background 0.3s; /* تغییر رنگ هنگام هاور */
+  }
+  
+  .reward-box:hover {
+    background: #3b3f44; /* رنگ پس‌زمینه هنگام هاور */
+  }
+  
+  .reward-link {
+    display: flex;
+    align-items: center;
+    color: #ffe600; /* رنگ متن جایزه */
+    text-decoration: none; /* حذف زیرخط */
+  }
+  
+  .reward-icon {
+    width: 25px; /* عرض آیکن */
+    height: 25px; /* ارتفاع آیکن */
+    margin-right: 10px;
+  }
+  
+  .disabled {
+    color: gray; /* رنگ متن غیرفعال */
+  }
+  
+  .timer-text {
+    color: #ccc; /* رنگ متن تایمر */
+  }
+  
+  .close-btn {
+    background: #0056b3; /* رنگ دکمه بستن */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s; /* تغییر رنگ هنگام هاور */
+  }
+  
+  .close-btn:hover {
+    background: darkred; /* رنگ هنگام هاور */
+  }
+  
+  .toggle-mine-page-btn {
+    background: #007bff; /* رنگ دکمه toggle */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s; /* تغییر رنگ هنگام هاور */
+  }
+  
+  .toggle-mine-page-btn:hover {
+    background: #0056b3; /* رنگ هنگام هاور */
+  }
+  

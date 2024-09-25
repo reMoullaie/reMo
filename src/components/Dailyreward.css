@@ -1,0 +1,143 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.modal-content {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background: #16181b;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transform: scale(0.5);
+  opacity: 0;
+  animation: scaleUp 0.5s forwards;
+  animation-delay: 0.1s;
+}
+
+.modal-title {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.modal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reward-box {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.reward-link {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.reward-link:hover {
+  color: #0056b3;
+}
+
+.reward-link.disabled {
+  color: #888;
+  pointer-events: none;
+}
+
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #272a2f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+.claim-btn{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00b300;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+
+}
+.claim-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.close-btn:hover {
+  background-color: #272a2f;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+.reward-box {
+  margin-bottom: 10px;
+}
+
+.reward-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+

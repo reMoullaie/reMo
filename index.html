@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Quiz Coin</title>
+    <style>
+        img {
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+
+        body {
+            -webkit-touch-callout: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-drag: none;
+        }
+    </style>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <title>Bear Coins Bot</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+        // جلوگیری از کلیک راست و لمس طولانی روی تصاویر
+        function preventImageInteraction(event) {
+            if (event.target.tagName === 'IMG') {
+                event.preventDefault();
+            }
+        }
+
+        // تنظیمات عمومی برای جلوگیری از تعاملات ناخواسته
+        function setupEventPreventions() {
+            document.addEventListener('contextmenu', preventImageInteraction);
+            document.addEventListener('touchstart', preventImageInteraction, { passive: false });
+
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault(); // جلوگیری از کلیک راست
+            });
+
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault(); // جلوگیری از کشیدن عناصر
+            });
+
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault(); // جلوگیری از انتخاب متن
+            });
+
+            document.addEventListener('gesturestart', function(e) {
+                e.preventDefault(); // جلوگیری از زوم با Pinch Zoom
+            });
+
+            document.addEventListener('gesturechange', function(e) {
+                e.preventDefault(); // جلوگیری از تغییر اندازه
+            });
+
+            document.addEventListener('gestureend', function(e) {
+                e.preventDefault(); // جلوگیری از زوم در پایان لمس
+            });
+
+            document.addEventListener('wheel', function(e) {
+                if (e.ctrlKey) {
+                    e.preventDefault(); // جلوگیری از زوم با Ctrl + Scroll
+                }
+            }, { passive: false });
+
+            document.addEventListener('keydown', function(e) {
+                if ((e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '0'))) {
+                    e.preventDefault(); // جلوگیری از زوم با Ctrl + Key
+                }
+            });
+
+            document.addEventListener('touchmove', function(event) {
+                if (event.scale !== 1) {
+                    event.preventDefault(); // جلوگیری از زوم لمسی
+                }
+            }, { passive: false });
+        }
+
+        // تنظیمات برای Telegram WebApp API
+        function setupTelegramAPI() {
+            if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+                Telegram.WebApp.disableAutoResize();  // غیرفعال کردن تغییر اندازه خودکار
+                Telegram.WebApp.ready(); // آماده سازی وب اپلیکیشن برای تلگرام
+            }
+        }
+
+        // فراخوانی تنظیمات
+        setupEventPreventions();
+        setupTelegramAPI();
+    </script>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
