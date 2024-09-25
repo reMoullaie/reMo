@@ -188,12 +188,22 @@ const App: React.FC = () => {
                 <p className="text-sm text-center">{(clicksCount)}</p>
                </div>
             </div>
+            <div className="px-4 mt-4">
+            {/* نوار پیشرفت */}
+            <div className="progress-bar-container">
+              <div className="progress-bar relative items-center flex justify-center" 
+              style={{ width: `${(clicksCount / clickLimit) * 100}%` }}>
+              <p>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}</p></div>
+            </div>
+            </div>
             <div className="px-4 mt-4 flex justify-center">
               <div className="px-4 py-2 flex items-center space-x-2">
                 <img src={dollarCoin} alt="Dollar Coin" className="w-10 h-10" />
                 <p className="text-4xl text-white">{points.toLocaleString()}</p>
               </div>
+              
             </div>
+            
             <div className="px-4 mt-4 flex justify-center">
               <div className="w-80 h-80 p-4 rounded-full circle-outer" onClick={handleCardClick}>
                 <div className="w-full h-full rounded-full circle-inner">
@@ -203,17 +213,13 @@ const App: React.FC = () => {
             </div> 
             <div className="flex justify-between">
             <button onClick={toggleMinePage}>
-            <img src={Arrow} alt="Boost" className="mx-auto w-12 h-12" />
-            <p className="text-[10px] text-center text-[#85827d] mt-1">Mine</p>
-
-        {isMinePageOpen}
-      </button>
+               <img src={Arrow} alt="Boost" className="mx-auto w-12 h-12" />
+               <p className="text-[10px] text-center text-[#85827d] mt-1">Mine</p>
+               {isMinePageOpen}
+            </button>
       
-      {isMinePageOpen && (
-        <MinePage 
-          toggleMinePage={toggleMinePage} 
-          points={points} // ارسال موجودی سکه‌ها به MinePage
-        />
+      {isMinePageOpen && (<MinePage toggleMinePage={toggleMinePage} points={points} // ارسال موجودی سکه‌ها به MinePage
+      />
       )}
              
              <a
@@ -229,15 +235,7 @@ const App: React.FC = () => {
            </div>
           </div>
         </div>
-           <div className="px-4 mt-4">
-  {/* نوار پیشرفت */}
-  <div className="progress-bar-container">
-    <div
-      className="progress-bar relative items-center flex justify-center"
-      style={{ width: `${(clicksCount / clickLimit) * 100}%` }}
-    ><p>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}</p></div>
-  </div>
-  </div>
+          
   
   
       </div>
