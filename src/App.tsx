@@ -217,12 +217,7 @@ const App: React.FC = () => {
         {isMinePageOpen && (<MinePage toggleMinePage={toggleMinePage} points={points} // ارسال موجودی سکه‌ها به MinePage
         />
         )}
-         {/* نوار پیشرفت */}
-         <div className="progress-bar-container ml-4">
-              <div className="progress-bar relative items-center flex justify-center" 
-              style={{ width: `${(clicksCount / clickLimit) * 100}%` }}>
-              <p>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}</p></div>
-            </div>
+         
              <button onClick={toggleBoostPage} className="mx-4">
                <img src={Boost} alt="Boost" className="mx-auto w-12 h-12" />
                <p className="text-[10px] text-center text-[#85827d] mt-1">Mine</p>
@@ -235,7 +230,12 @@ const App: React.FC = () => {
           </div>
         </div>
           
-  
+  {/* نوار پیشرفت */}
+  <div className="progress-bar-container">
+              <div className="progress-bar relative items-center flex justify-center" 
+              style={{ width: `${(clicksCount / clickLimit) * 100}%` }}>
+              <p>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}</p></div>
+            </div>
   
       </div>
       <div className="fixed bottom-0 left-25 w-[calc(100%-2rem)] max-w-xl  flex justify-around items-center z-50 rounded-3xl text-xs">
