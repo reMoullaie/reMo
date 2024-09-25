@@ -189,12 +189,7 @@ const App: React.FC = () => {
                </div>
             </div>
             <div className="px-4 mt-4">
-            {/* نوار پیشرفت */}
-            <div className="progress-bar-container">
-              <div className="progress-bar relative items-center flex justify-center" 
-              style={{ width: `${(clicksCount / clickLimit) * 100}%` }}>
-              <p>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}</p></div>
-            </div>
+          
             </div>
             <div className="px-4 mt-4 flex justify-center">
               <div className="px-4 py-2 flex items-center space-x-2">
@@ -221,7 +216,7 @@ const App: React.FC = () => {
       {isMinePageOpen && (<MinePage toggleMinePage={toggleMinePage} points={points} // ارسال موجودی سکه‌ها به MinePage
       />
       )}
-             
+             <p className="text-sm text-center">{(timeRemaining)}</p>
              <a
           href="#"
           onClick={toggleBoostPage}
@@ -239,13 +234,13 @@ const App: React.FC = () => {
   
   
       </div>
-      <div className="fixed bottom-0 left-25 w-[calc(100%-2rem)] max-w-xl bg-[#272a2f] flex justify-around items-center z-50 rounded-3xl text-xs">
-        <div className="text-center text-[#85827d] w-1/5 bg-[#1c1f24] m-1 p-2 rounded-2xl">
+      <div className="fixed bottom-0 left-25 w-[calc(100%-2rem)] max-w-xl  flex justify-around items-center z-50 rounded-3xl text-xs">
+        <div className="text-center text-[#85827d] w-1/5 m-1 p-2 rounded-2xl">
           <img src={binanceLogo} alt="Exchange" className="w-8 h-8 mx-auto" />
           <p className="mt-1">Exchange</p>
         </div>
         <div className="text-center text-[#85827d] w-1/5">
-          <button className="rounded-lg px-2 py-2 w-full relative items-center" onClick={handleOpenDailyReward}>
+          <button className="rounded-lg px-2 py-2 w-full  relative items-center" onClick={handleOpenDailyReward}>
             <img src={dailyReward} alt="Daily Reward" className="w-8 h-8 mx-auto" />
             <p className="text-[10px] text-center text-[#85827d] mt-1">Reward</p>
           </button>
@@ -267,7 +262,7 @@ const App: React.FC = () => {
           {isRewardModalOpen && <RewardModal onClose={handleCloseRewardModal} onReward={handleReward} points={points} />}
         </div>
         <div className="text-center text-[#85827d] w-1/5">
-          <button className="open-quiz-modal-btn bg-[#272a2f]" onClick={handleOpenAirdrop}>
+          <button className="open-quiz-modal-btn " onClick={handleOpenAirdrop}>
             <img src={hamsterCoin} alt="Airdrop" className="w-8 h-8 mx-auto" />
             <p className="mt-1">Airdrop</p>
           </button>
