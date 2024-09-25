@@ -231,7 +231,7 @@ const App: React.FC = () => {
         </div>
           
   {/* نوار پیشرفت */}
-  <div className="progress-bar-container">
+  <div className="progress-bar-container mx-auto">
               <div className="progress-bar relative items-center flex justify-center" 
               style={{ width: `${(clicksCount / clickLimit) * 100}%` }}>
               <p>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, '0')}</p></div>
